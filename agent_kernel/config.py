@@ -6,5 +6,6 @@ load_dotenv()
 
 #union llm
 def init_model():
-    llm=init_chat_model(os.getenv("LLM_MODEL"))
+    model = os.getenv("LLM_MODEL", "deepseek-v4-pro")
+    llm = init_chat_model(model)
     return llm

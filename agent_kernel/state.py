@@ -7,5 +7,3 @@ class AgentState(TypedDict):
     messages:Annotated[list, operator.add]
     #next node/cover
     next:str
-    #user id
-    user_id:str

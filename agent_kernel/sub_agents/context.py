@@ -1,12 +1,12 @@
 import os
 from dotenv import load_dotenv
-from app.agent.agent_kernel.config import init_model
-from app.agent.agent_kernel.state import AgentState
+from agent_kernel.config import init_model
+from agent_kernel.state import AgentState
 from langchain_core.messages import SystemMessage,HumanMessage
 
 load_dotenv()
 
-MAX_TOKENS=int(os.getenv("MAX_TOKENS"))
+MAX_TOKENS = int(os.getenv("MAX_TOKENS", "20000"))
 COMPRESS_PROMPT=[SystemMessage(
           content="用一段中文总结以下对话，提取课程名、概念、用户水平，不超过150字。"
       )]
